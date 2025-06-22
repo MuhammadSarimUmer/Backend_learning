@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "dog-facts": "^1.0.3",
+    "express": "^5.1.0",
+    "figlet": "^1.8.1"
+  }
+}
