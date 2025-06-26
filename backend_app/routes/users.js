@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// /* GET users listing. */
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 
-module.exports = router;
+// module.exports = router;
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/backend_appdb");
+
+const userSchema = mongoose.Schema({
+  username:String,
+  name:String,
+  age:Number
+})
+
+module.exports = mongoose.model("users",userSchema);
