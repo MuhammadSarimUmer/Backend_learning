@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "dog-facts": "^1.0.3",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "figlet": "^1.8.1"
+    "connect-flash": "^0.1.1",
+    "express-session": "^1.18.1"
   }
 }
