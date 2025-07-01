@@ -8,21 +8,28 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/create',async (req,res,)=>{
+router.get("/create",async (req,res,)=>{
    let users = await userModel.create({
-      username: 'HP',
+      username: 'HPone',
       password: '123456',
-      email: 'hp@gmail.com',
+      email: 'hp13@gmail.com',
       fullName: 'HP'
    })
    res.send(users);
 })
-router.get("/createPost",async (req,res,)=>{
+router.get("/createpost",async (req,res,)=>{
    let posts = await postModel.create({
-      postText: 'Hello World',
+      postText: 'Hello World kese ho ap',
       users:"6862cd7ed588ca5d681a3ae7"
    })
-   res.send(posts);
+   let users = await userModel.findOne({_id:"6862cd7ed588ca5d681a3ae7"});
+   users.posts.push(posts._id);
+   await users.save();
+   res.send("done");
+})
+router.get("/getpostofuser",async(req,res)=>{
+   let user = await userModel.findOne({_id:"6862cd7ed588ca5d681a3ae7"}).populate("posts")
+   res.send(user);
 })
 
 module.exports = router;
