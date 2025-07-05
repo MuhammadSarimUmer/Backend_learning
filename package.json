@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "connect-flash": "^0.1.1",
-    "express-session": "^1.18.1",
-    "mongoose": "^8.16.1"
-  }
-}
